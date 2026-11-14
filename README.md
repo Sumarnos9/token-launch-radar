@@ -22,8 +22,8 @@ implied = max(1, round(TVL × multiple(category)
                       × (1 + 0.02 × min(chains − 1, 5))))
 ```
 
-The board covers the snapshot's whole 40-protocol watchlist and adds 160 early pre-token
-protocols below the $50M floor, by TVL — 200 rows, each with a six-step farm plan stating what
+The board covers the snapshot's whole 40-protocol watchlist and adds 138 early pre-token
+protocols below the $50M floor, by TVL — 178 rows, each with a six-step farm plan stating what
 it costs and how long it takes. Live-token protocols are set aside in their own view, shown at
 the market's own value, never mixed into the ranking.
 
