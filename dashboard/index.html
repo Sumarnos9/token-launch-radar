@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Launch Radar: pre-token protocols ranked by implied value</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to the board</a>
+<header class="top">
+  <div class="brand">
+    <span class="dot" aria-hidden="true"></span>
+    <div>
+      <h1>Launch Radar</h1>
+      <p class="sub">Pre-token protocols, ranked by what their launch would be worth.</p>
+    </div>
+  </div>
+  <nav class="tabs" aria-label="Views">
+    <button id="tab-board" class="tab on" type="button">Board</button>
+    <button id="tab-live" class="tab" type="button">Live tokens</button>
+    <button id="tab-model" class="tab" type="button">Model &amp; method</button>
+  </nav>
+</header>
+<main id="main" tabindex="-1">
+  <section id="stats" class="stats" aria-label="Snapshot facts"></section>
+  <section id="filters" class="filters" aria-label="Filter the board">
+    <label class="fld">Search
+      <input id="q" type="search" placeholder="Protocol name or slug" autocomplete="off">
+    </label>
+    <label class="fld">Category
+      <select id="cat"><option value="">All categories</option></select>
+    </label>
+    <label class="fld">Chain
+      <select id="chain"><option value="">All chains</option></select>
+    </label>
+    <label class="fld">Min TVL
+      <select id="mintvl">
+        <option value="0">Any TVL</option>
+        <option value="50000000">$50M and up</option>
+        <option value="100000000">$100M and up</option>
+        <option value="500000000">$500M and up</option>
+      </select>
+    </label>
+    <label class="chk"><input id="watch" type="checkbox"> Watchlist only</label>
+    <span id="count" class="count" aria-live="polite"></span>
+  </section>
+  <div class="tablewrap">
+    <table id="grid">
+      <thead><tr>
+        <th data-k="rank" class="num">Rank</th>
+        <th data-k="name">Protocol</th>
+        <th data-k="category">Category</th>
+        <th data-k="chains">Chains</th>
+        <th data-k="tvl_usd" class="num">TVL</th>
+        <th data-k="change_7d" class="num">7d</th>
+        <th data-k="age_days" class="num">Age</th>
+        <th data-k="implied_value_usd" class="num">Implied value</th>
+      </tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </div>
+  <p class="hint">Click a row for the protocol's detail view and farm plan. Click a column header to sort.</p>
+  <section id="detail" class="detail" hidden></section>
+  <section id="live" class="live" hidden></section>
+  <section id="model" class="model" hidden></section>
+</main>
+<footer class="foot">
+  <p>Implied values are this radar's own claim, worked out from the snapshot's figures. They are not a
+  prediction of whether or when a protocol issues a token, and a protocol that records no token may
+  still have one its DefiLlama record does not carry.</p>
+  <p id="src" class="src"></p>
+</footer>
+<script src="../data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
